@@ -14,6 +14,10 @@ module.exports = {
             router: "0xbe65b8f75b9f20f4c522e0067a3887fada714800",  //JetswapRouter
             factory: "0x0eb58e5c8aa63314ff5547289185cc4583dfcbd5"  //JetswapFactory
         },
+        baby:{
+            router: "0x325E343f1dE602396E256B67eFd1F61C3A6B38Bd",
+            factory: "0x86407bEa2078ea5f5EB5A52B2caA963bC1F889Da"
+        }
     }
 };
 
