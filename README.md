@@ -98,6 +98,16 @@ function uniswapV2Call(address _sender, uint256 _amount0, uint256 _amount1, byte
 
 ### Run it
 
+Install node.js packages and compile a smart contract code
+```sh
+npm install
+truffle compile
+```
+
+```sh
+truffle migrate --network mainnet
+```
+
 Its not a full infrastructure, but a working workflow, if you deploy the contract.
 
 ``` bash
@@ -117,4 +127,3 @@ started: wallet 0xXXXX - gasPrice 5000000000 - contract owner: 0xXXXX
 #### Hints
 
  * Designed to have multiple chain connectivities, play with some non public providers to be faster then the public once. Its all designed as "first win"
- 

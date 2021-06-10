@@ -33,12 +33,12 @@ const flashswap = new web3.eth.Contract(FlashswapApi, FLASHSWAP_CONTRACT);
 
 const pairs = [
     {
-        name: 'BUSD/BNB pancake>panther',
+        name: 'BUSD/BNB pancake>bakery',
         tokenBorrow: BUSD_MAINNET,
         amountTokenPay: 10,
         tokenPay: BNB_MAINNET,
         sourceRouter: addresses.pancake.router,
-        targetRouter: addresses.panther.router,
+        targetRouter: addresses.bakery.router,
         sourceFactory: addresses.pancake.factory,
     }
 ]
@@ -49,7 +49,7 @@ const init = async () => {
     const transactionSender = TransactionSender.factory(process.env.WSS_BLOCKS.split(','));
 
     let nonce = await web3.eth.getTransactionCount(admin);
-    let gasPrice = await web3.eth.getGasPrice();
+    let gasPrice = await web3.eth.getGasPrice()
 
     setInterval(async () => {
         nonce = await web3.eth.getTransactionCount(admin);
@@ -59,7 +59,14 @@ const init = async () => {
         gasPrice = await web3.eth.getGasPrice()
     }, 1000 * 60 * 3);
 
-    const owner = await flashswap.methods.owner().call();
+    let owner;
+    try {
+        owner = await flashswap.methods.owner().call()
+    } catch (e) {
+        console.log(``, 'owner error', e.message);
+        owner = admin;
+    }
+
 
     console.log(`started: wallet ${admin} - gasPrice ${gasPrice} - contract owner: ${owner}`);
 

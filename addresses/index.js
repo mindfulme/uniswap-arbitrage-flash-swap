@@ -6,9 +6,13 @@ module.exports = {
             routerV1: "0x05fF2B0DB69458A0750badebc4f9e13aDd608C7F",
             factoryV1: "0xBCfCcbde45cE874adCB698cC183deBcF17952812"
         },
+        bakery: {
+            router: "0xCDe540d7eAFE93aC5fE6233Bee57E1270D3E330F",
+            factory: "0x01bF7C66c6BD861915CdaaE475042d3c4BaE16A7"
+        },
         panther: {
-            router: "0xbe65b8f75b9f20f4c522e0067a3887fada714800",
-            factory: "0x0eb58e5c8aa63314ff5547289185cc4583dfcbd5"
+            router: "0xbe65b8f75b9f20f4c522e0067a3887fada714800",  //JetswapRouter
+            factory: "0x0eb58e5c8aa63314ff5547289185cc4583dfcbd5"  //JetswapFactory
         },
     }
 };
