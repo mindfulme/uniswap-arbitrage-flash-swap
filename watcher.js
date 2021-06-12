@@ -30,8 +30,10 @@ const BUSD_MAINNET = '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56';
 const USDT_MAINNET = '0x55d398326f99059fF775485246999027B3197955';
 const BAKE_MAINNET = '0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5';
 const KALM_MAINNET = '0x4BA0057f784858a48fe351445C672FF2a3d43515';
-const BARK_MAINNET = '';
+const DOGGY_MAINNET = '0x74926B3d118a63F6958922d3DC05eB9C6E6E00c6';
+const BARK_MAINNET = '0xb1528a7BE5A96B77de5337988Ba69029cA6E2c7A';
 const TOKAU_MAINNET = '0xC409eC8a33f31437Ed753C82EEd3c5F16d6D7e22';
+const XMS_1001 = '0x062faE7193A4395a9D95921Ed3F9aebbCd11EC70';
 
 const prices = {};
 const flashswap = new web3.eth.Contract(FlashswapApi, FLASHSWAP_CONTRACT);
@@ -40,21 +42,48 @@ const pairs = [
     {
         name: 'BUSD/BNB pancake>bakery',
         tokenBorrow: BUSD_MAINNET,
-        amountTokenPay: 5,
+        amountTokenPay: 10,
         tokenPay: BNB_MAINNET,
         sourceRouter: addresses.pancake.router,
         targetRouter: addresses.bakery.router,
         sourceFactory: addresses.pancake.factory,
     },
-    {
-        name: 'BAKE/BNB bakery>panacke',
-        tokenBorrow: BAKE_MAINNET,
-        amountTokenPay: 2,
-        tokenPay: BNB_MAINNET,
-        sourceRouter: addresses.bakery.router,
-        targetRouter: addresses.pancake.router,
-        sourceFactory: addresses.bakery.factory,
-    },
+    // {
+    //     name: 'BAKE/BNB panacke>bakery',
+    //     tokenBorrow: BAKE_MAINNET,
+    //     amountTokenPay: 5,
+    //     tokenPay: BNB_MAINNET,
+    //     sourceFactory: addresses.pancake.factory,
+    //     sourceRouter: addresses.pancake.router,
+    //     targetRouter: addresses.bakery.router,
+    // },
+    // {
+    //     name: 'DOGGY/BNB bakery>panacke',
+    //     tokenBorrow: DOGGY_MAINNET,
+    //     amountTokenPay: 1,
+    //     tokenPay: BNB_MAINNET,
+    //     sourceRouter: addresses.bakery.router,
+    //     targetRouter: addresses.pancake.router,
+    //     sourceFactory: addresses.bakery.factory,
+    // },
+    // {
+    //     name: 'BAKE/BUSD panacke>baby',
+    //     tokenBorrow: BAKE_MAINNET,
+    //     amountTokenPay: 200,
+    //     tokenPay: BUSD_MAINNET,
+    //     sourceFactory: addresses.pancake.factory,
+    //     sourceRouter: addresses.pancake.router,
+    //     targetRouter: addresses.baby.router,
+    // },
+    // {
+    //     name: 'BARK/BNB bakery>pancake',
+    //     tokenBorrow: BARK_MAINNET,
+    //     amountTokenPay: 1,
+    //     tokenPay: BNB_MAINNET,
+    //     sourceFactory: addresses.bakery.factory,
+    //     sourceRouter: addresses.bakery.router,
+    //     targetRouter: addresses.pancake.router,
+    // },
     // {
     //     name: 'TOKAU/USDT bakery->pancake',
     //     tokenBorrow: TOKAU_MAINNET,
