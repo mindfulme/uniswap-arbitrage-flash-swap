@@ -71,11 +71,19 @@ module.exports = {
 
     mainnet: {
       provider: () => new HDWalletProvider(
-        'YOUR KEY',
-          'http://127.0.0.1:8545/'
+          process.env.PRIVATE_KEY,
+          process.env.BSC_HTTPS
       ),
       network_id: 56
     },
+
+    // mainnet: {
+    //   provider: () => new HDWalletProvider(
+    //     'YOUR KEY',
+    //       'http://127.0.0.1:8545/'
+    //   ),
+    //   network_id: 56
+    // },
 
     forknet: {
       provider: () => new HDWalletProvider(
